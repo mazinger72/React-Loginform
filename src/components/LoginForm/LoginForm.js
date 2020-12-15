@@ -26,6 +26,7 @@ function LoginForm(props) {
             "password": state.password,
         }
         axios.post(API_BASE_URL + 'login', payload)
+        fetch("http://localhost:8080")
             .then(function (response) {
                 if (response.data.code === 200) {
                     setState(prevState => ({
